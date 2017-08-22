@@ -2,6 +2,7 @@ package samar.com.animationmadeeasy;
 
 import android.content.Context;
 import android.view.View;
+import android.view.animation.Animation;
 
 import samar.com.animationmadeeasy.animation_view.BasicAnimationForView;
 
@@ -29,15 +30,42 @@ public class AnimationMadeEasy {
     }
 
 
-    public void slideRightToLeftWithViewVisibilty(View viewGone, View viewVisble, long duration)
+    public void moveRightToLeftWithViewVisibility(View viewGone, View viewVisble, long duration)
     {
         new BasicAnimationForView(mContext).slideToLeft(viewGone,viewVisble,duration);
     }
 
 
-    public void slideLeftToRightWithViewVisibilty(View viewGone, View viewVisble, long duration)
+    public void moveLeftToRightWithViewVisibility(View viewGone, View viewVisble, long duration)
     {
         new BasicAnimationForView(mContext).slideToRight(viewGone,viewVisble,duration);
     }
 
+
+    public void moveToTopWithViewVisibility(View viewGone, View viewVisble, long duration)
+    {
+        new BasicAnimationForView(mContext).slideToTop(viewGone,viewVisble,duration);
+    }
+
+
+    public void moveToBottomWithViewVisibility(View viewGone, View viewVisble, long duration)
+    {
+        new BasicAnimationForView(mContext).slideToBottom(viewGone,viewVisble,duration);
+    }
+
+    public void fadeView(View view,int visibility,float fromAlpha,float toAlpha, long duration)
+    {
+        new BasicAnimationForView(mContext).fadeAnimation(view,visibility,fromAlpha,toAlpha,duration);
+    }
+
+
+    public void blinkView(View view,long duration)
+    {
+        new BasicAnimationForView(mContext).blinkAnimation(Animation.ABSOLUTE,view,duration);
+    }
+
+    public void rotateView(View view,long duration)
+    {
+        new BasicAnimationForView(mContext).rotateAnimation(view,duration,Animation.RESTART,Animation.ABSOLUTE);
+    }
 }

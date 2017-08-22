@@ -12,7 +12,7 @@ import samar.com.animationmadeeasy.AnimationMadeEasy;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tv1,tv2;
-    Button btnSlideToLeft,btnSlideToRight;
+    Button btnSlideToLeft,btnSlideToRight,btnSlideToTop,btnSlideToBottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSlideToLeft.setOnClickListener(this);
         btnSlideToRight =(Button)findViewById(R.id.btnSlideToRight);
         btnSlideToRight.setOnClickListener(this);
+        btnSlideToTop =(Button)findViewById(R.id.btnSlideToTop);
+        btnSlideToTop.setOnClickListener(this);
+        btnSlideToBottom =(Button)findViewById(R.id.btnSlideToBottom);
+        btnSlideToBottom.setOnClickListener(this);
 
 
     }
@@ -35,11 +39,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.btnSlideToLeft:
-                AnimationMadeEasy.getInstance(MainActivity.this).slideRightToLeftWithViewVisibilty(tv1,tv2,900);
+                AnimationMadeEasy.getInstance(MainActivity.this).moveRightToLeftWithViewVisibility(tv1,tv2,900);
                 break;
 
             case R.id.btnSlideToRight:
-                AnimationMadeEasy.getInstance(MainActivity.this).slideLeftToRightWithViewVisibilty(tv1,tv2,900);
+                AnimationMadeEasy.getInstance(MainActivity.this).moveLeftToRightWithViewVisibility(tv1,tv2,900);
+                break;
+            case R.id.btnSlideToTop:
+                AnimationMadeEasy.getInstance(MainActivity.this).moveToTopWithViewVisibility(tv1,tv2,900);
+                break;
+            case R.id.btnSlideToBottom:
+                AnimationMadeEasy.getInstance(MainActivity.this).rotateView(tv1,600);
                 break;
         }
 

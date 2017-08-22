@@ -11,14 +11,14 @@
 
     <TextView
         android:id="@+id/tvText1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SLIDE"
         android:textSize="45sp"
         android:textColor="@color/colorAccent"
         android:gravity="center"
         android:layout_gravity="center"
-        android:visibility="gone"
+        android:visibility="visible"
         />
 
 
@@ -30,10 +30,10 @@
         android:layout_height="wrap_content"
         android:text="SLIDED"
         android:textSize="45sp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         android:gravity="center"
         android:layout_gravity="center"
-        android:visibility="visible"
+        android:visibility="gone"
         />
 
 
@@ -55,7 +55,26 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="45dp"
+        />
 
+    <Button
+        android:id="@+id/btnSlideToTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Side To Top"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="45dp"
+        />
+
+    <Button
+        android:id="@+id/btnSlideToBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FADE"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="45dp"
         />
 
 </LinearLayout>
