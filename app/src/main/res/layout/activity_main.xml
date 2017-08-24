@@ -9,6 +9,7 @@
     android:gravity="center"
     tools:context="samar.com.easyanimation.MainActivity">
 
+
     <TextView
         android:id="@+id/tvText1"
         android:layout_width="wrap_content"
@@ -71,7 +72,7 @@
         android:id="@+id/btnSlideToBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FADE"
+        android:text="Bounce"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="45dp"

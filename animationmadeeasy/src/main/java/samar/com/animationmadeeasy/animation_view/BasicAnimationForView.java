@@ -92,4 +92,11 @@ public class BasicAnimationForView {
         view.startAnimation(animation);
 
     }
+
+
+    public void bounceAnimation(View view,double duration, double amplitude, double frequency)
+    {
+        Animation animation=new Animations(context).bounceAnimation(duration,amplitude,frequency);
+        view.startAnimation(animation);
+    }
 }

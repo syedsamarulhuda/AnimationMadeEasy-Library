@@ -6,7 +6,6 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
-import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 
 import samar.com.animationmadeeasy.R;
@@ -18,7 +17,8 @@ import samar.com.animationmadeeasy.utils.AnimationInterpolator;
 
 public class Animations {
 
- private Context context;
+    private Context context;
+
     public Animations() {
     }
 
@@ -26,8 +26,7 @@ public class Animations {
         this.context = context;
     }
 
-    public TranslateAnimation slideToLeft(View viewGone, View viewVisible, long duration)
-    {
+    public TranslateAnimation slideToLeft(View viewGone, View viewVisible, long duration) {
         TranslateAnimation animate = new TranslateAnimation(0, -viewGone.getWidth(), 0, 0);
         animate.setDuration(duration);
         animate.setFillAfter(true);
@@ -36,8 +35,7 @@ public class Animations {
     }
 
 
-    public Animation getSlideToLeftFromRight(long duration)
-    {
+    public Animation getSlideToLeftFromRight(long duration) {
         Animation slideLeftFromRight = AnimationUtils.loadAnimation(context, R.anim.slide_left_right);
         slideLeftFromRight.setDuration(duration);
 
@@ -45,9 +43,7 @@ public class Animations {
     }
 
 
-
-    public TranslateAnimation slideToRight(View viewGone, View viewVisible, long duration)
-    {
+    public TranslateAnimation slideToRight(View viewGone, View viewVisible, long duration) {
         TranslateAnimation animate = new TranslateAnimation(-viewGone.getWidth(), 0, 0, 0);
         animate.setDuration(duration);
         animate.setFillAfter(true);
@@ -56,17 +52,15 @@ public class Animations {
     }
 
 
-    public Animation getSlideToRightFromLeft(long duration)
-    {
+    public Animation getSlideToRightFromLeft(long duration) {
         Animation slideLeftFromRight = AnimationUtils.loadAnimation(context, R.anim.slide_rigt_left);
         slideLeftFromRight.setDuration(duration);
 
         return slideLeftFromRight;
     }
 
-    public TranslateAnimation slideToTop(View viewGone, View viewVisible, long duration)
-    {
-        TranslateAnimation animate = new TranslateAnimation(0, 0,0,-viewGone.getWidth());
+    public TranslateAnimation slideToTop(View viewGone, View viewVisible, long duration) {
+        TranslateAnimation animate = new TranslateAnimation(0, 0, 0, -viewGone.getWidth());
         animate.setDuration(duration);
         animate.setFillAfter(true);
 
@@ -74,8 +68,7 @@ public class Animations {
     }
 
 
-    public Animation getSlideToTop(long duration)
-    {
+    public Animation getSlideToTop(long duration) {
         Animation slideTop = AnimationUtils.loadAnimation(context, R.anim.slide_top);
         slideTop.setDuration(duration);
 
@@ -83,9 +76,8 @@ public class Animations {
     }
 
 
-    public TranslateAnimation slideToBottom(View viewGone, View viewVisible, long duration)
-    {
-        TranslateAnimation animate = new TranslateAnimation(0, 0,-viewGone.getWidth(),0);
+    public TranslateAnimation slideToBottom(View viewGone, View viewVisible, long duration) {
+        TranslateAnimation animate = new TranslateAnimation(0, 0, -viewGone.getWidth(), 0);
         animate.setDuration(duration);
         animate.setFillAfter(true);
 
@@ -93,8 +85,7 @@ public class Animations {
     }
 
 
-    public Animation getSlideToBottom(long duration)
-    {
+    public Animation getSlideToBottom(long duration) {
         Animation slideTop = AnimationUtils.loadAnimation(context, R.anim.slide_bottom);
         slideTop.setDuration(duration);
 
@@ -102,16 +93,14 @@ public class Animations {
     }
 
 
-    public Animation fadeAnimation(float fromAlpha,float toAlpha,long duration)
-    {
-        AlphaAnimation alphaAnimation =new AlphaAnimation(fromAlpha,toAlpha);
+    public Animation fadeAnimation(float fromAlpha, float toAlpha, long duration) {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(fromAlpha, toAlpha);
         alphaAnimation.setDuration(duration);
         return alphaAnimation;
     }
 
-    public Animation blinkAnimation(int repeatCount,float fromAlpha,float toAlpha,long duration)
-    {
-        AlphaAnimation alphaAnimation =new AlphaAnimation(fromAlpha,toAlpha);
+    public Animation blinkAnimation(int repeatCount, float fromAlpha, float toAlpha, long duration) {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(fromAlpha, toAlpha);
         alphaAnimation.setDuration(duration); //You can manage the blinking time with this parameter
         alphaAnimation.setStartOffset(20);
         alphaAnimation.setRepeatMode(Animation.REVERSE);
@@ -119,14 +108,24 @@ public class Animations {
         return alphaAnimation;
     }
 
-    public Animation rotateAnimation(float fromDegrees, float toDegrees, float pivotX, float pivotY,long duration,int repeatMode,int repeatCount)
-    {
-        RotateAnimation rotateAnimation= new RotateAnimation(fromDegrees,toDegrees,pivotX,pivotY);
+    public Animation rotateAnimation(float fromDegrees, float toDegrees, float pivotX, float pivotY, long duration, int repeatMode, int repeatCount) {
+        RotateAnimation rotateAnimation = new RotateAnimation(fromDegrees, toDegrees, pivotX, pivotY);
         rotateAnimation.setDuration(duration);
         rotateAnimation.setRepeatMode(repeatMode);
         rotateAnimation.setRepeatCount(repeatCount);
 
         return rotateAnimation;
+    }
+
+
+    public Animation bounceAnimation(double duration, double amplitude,double frequency ) {
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.bounce);
+        animation.setDuration((long) duration);
+
+        AnimationInterpolator interpolator = new AnimationInterpolator(amplitude,frequency);
+        animation.setInterpolator(interpolator);
+
+        return animation;
     }
 
 }
