@@ -113,7 +113,6 @@ public class Animations {
         rotateAnimation.setDuration(duration);
         rotateAnimation.setRepeatMode(repeatMode);
         rotateAnimation.setRepeatCount(repeatCount);
-
         return rotateAnimation;
     }
 
