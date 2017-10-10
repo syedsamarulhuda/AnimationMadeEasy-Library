@@ -33,6 +33,7 @@ public class AnimationMadeEasy {
 
     public void moveRightToLeftWithViewVisibility(View viewGone, View viewVisble, long duration) {
         new BasicAnimationForView(mContext).slideToLeft(viewGone, viewVisble, duration);
+
     }
 
 
